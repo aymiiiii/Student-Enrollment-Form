@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Enrollment Form</title>
+    <style>
+        body {
+            font-family: inter, sans-serif;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 0px;
+        }
+
+        .background img{
+            width: 100%;
+            height: 100%;
+        }
+
+        h1{
+            position: absolute;
+            color: black;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: lightblue;
+            background-color: white;
+            width: 35%;
+            height: 9%;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 90px;
+            font-weight: bold;
+            font-size: 2.3vw;
+            top: 2%;
+            box-shadow: 0 7px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form{
+            position: absolute;
+            top: 22%;
+            background-color: white;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 7px 8px rgba(0, 0, 0, 0.1);
+            width: 35%;
+            margin-bottom: 30px;
+            margin-left: -55%;
+        }
+
+        h3{
+            margin-left: 39%;
+            margin-top: 5%;
+        }
+
+        li{
+            margin-left: 30%;
+        }
+        
+        label {
+            margin-bottom: 8px;
+            display: block;
+            font-size: 16px;
+            margin-left: 13%;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        input, select, button {
+            width: 70%;
+            padding: 10px;
+            margin: 2px;
+            font-size: 12px;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin-left: 13%;
+            border-color: lightblue;
+            border-width: 2px;
+        }
+
+        
+        input[type="radio"] {
+            position: absolute;
+            width: auto;
+            margin-left: 50%;
+        }
+
+        input[type="checkbox"] {
+            position: absolute;
+            width: auto;
+            margin-left: 50%;
+        }
+
+        .form-section{
+            background-color: lightblue;
+            width: 75%;
+            height: 29%;
+            border-radius: 10px;
+            margin-left: 12%;
+            margin-top: 4%;
+            box-shadow: lightskyblue 0px 0px 5px;
+        }
+
+        label[for="full-name"]{
+            padding-top: 28px;
+        }
+
+        .form-section1{
+            background-color: lightblue;
+            width: 75%;
+            height: 10%;
+            border-radius: 10px;
+            margin-left: 12%;
+            margin-top: 3%;
+            box-shadow: lightskyblue 0px 0px 5px;
+        }
+
+        .form-section1 label{
+            margin-top: 2%;
+        }
+        .form-section1 .sex{
+            padding-top: 8px;
+            margin-left: 5%;
+        }
+
+        .form-section2{
+            background-color: lightblue;
+            width: 75%;
+            height: 9%;
+            border-radius: 10px;
+            margin-left: 12%;
+            margin-top: 3%;
+            box-shadow: lightskyblue 0px 0px 5px;
+        }
+
+        .form-section2 label[for="course"]{
+            padding-top: 8px;
+            margin-left: 4%;
+        }
+        .form-section3{
+            margin-top: 3%;
+            background-color: lightblue;
+            width: 75%;
+            height: 18%;
+            border-radius: 10px;
+            margin-left: 12%;
+            box-shadow: lightskyblue 0px 0px 5px;
+        }
+        .form-section3 label{
+            margin-top: 10px;
+        }
+        .form-section3 .interest{
+            margin-left: 4%;
+            padding-top: 15px;
+        }
+        button{
+            color: black;
+            font-weight: bold;
+            margin-top: 5%;
+            margin-left: 30%;
+            font-size: 14px;
+            background-color: lightblue;
+            border: 1px solid lightskyblue;
+            border-radius: 10px;
+            width: 200px;
+            height: 40px;
+            text-shadow: lightblue 0px 0px 20px;
+            box-shadow: lightskyblue  0px 0px 1px;
+            transition: 0.5s;
+        }
+
+        button:hover {
+            color: black;
+            background-color: lightblue;
+            cursor: pointer;
+            box-shadow: lightskyblue 0px 0px 10px;
+        }
+
+    .table-container{
+        padding: 0;
+    }
+
+    table {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        border-collapse: collapse;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 11.5%; 
+        margin-left: 40%;
+        box-shadow: 0 7px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    th{
+            background-color: lightblue;
+            color: black;
+            font-size: 1em;
+            text-align: left;
+        }
+
+    tbody td {
+            padding: 10px;
+            font-size: 0.9em;
+            border-bottom: 1px solid whitesmoke;
+            color: #333;
+        }
+
+    tbody tr:hover {
+            background-color: lightskyblue;
+        }
+
+    tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+    th, td {
+            text-align: center;
+        }
+    
+    th, tr{
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <img src="background.jpg">
+    </div>
+    <h1>Student Enrollment Form</h1>
+
+    <form>
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Fill in the form fields.</li>
+            <li>Check your interests.</li>
+            <li>Click "Enroll Now" to submit.</li>
+        </ol>
+
+        <div class="form-section">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" required>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+
+
+
+
+        <div class="form-section1">
+            <label class="sex">Sex:</label>
+            <input type="radio" id="male" name="sex" value="Male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="sex" value="Female">
+            <label for="female">Female</label>
+        </div>
+
+        <div class="form-section2">
+            <label for="course">Course Options:</label>
+            <select id="course" name="course" required>
+                <option value="BSIT">BSIT</option>
+                <option value="BSSW">BSSW</option>
+                <option value="BSPA">BSPA</option>
+            </select>
+        </div>
+
+        <div class="form-section3">
+            <label class="interest">Interests:</label>
+            <input type="checkbox" id="web-dev" name="interests" value="Web Development">
+            <label for="web-dev">Networking</label>
+            <input type="checkbox" id="data-science" name="interests" value="Data Science">
+            <label for="data-science">Social Sciences</label>
+            <input type="checkbox" id="networking" name="interests" value="Networking">
+            <label for="networking">Programming</label>
+            <input type="checkbox" id="graphic-design" name="interests" value="Graphic Design">
+            <label for="graphic-design">Laws</label>
+        </div>
+
+        <button type="submit">Enroll Now</button>
+    </form>
+    <table>
+        <th>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>Course</th>
+                <th>Interests</th>
+            </tr>
+        </th>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Louiza Pajarillon</td>
+                <td>louizza@gmail.com</td>
+                <td>20</td>
+                <td>Female</td>
+                <td>BSIT</td>
+                <td>Networking</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Ken Lloyd Alcoreza</td>
+                <td>ken@gmail.com</td>
+                <td>21</td>
+                <td>Male</td>
+                <td>BSIT</td>
+                <td>Programming</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Aimee Rose</td>
+                <td>aimeerose@gmail.com</td>
+                <td>21</td>
+                <td>Feale</td>
+                <td>BSIT</td>
+                <td>Programming</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Shane Rose</td>
+                <td>sahne@gmail.com</td>
+                <td>20</td>
+                <td>Male</td>
+                <td>BSPA</td>
+                <td>Laws</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Ariana Jones</td>
+                <td>ariana@gmail.com</td>
+                <td>25</td>
+                <td>Feale</td>
+                <td>BSSW</td>
+                <td>Social Sciences</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Tom Jones</td>
+                <td>tom@gmail.com</td>
+                <td>20</td>
+                <td>Male</td>
+                <td>BSIT</td>
+                <td>Networking</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Daniel Padilla</td>
+                <td>danielp@gmail.com</td>
+                <td>29</td>
+                <td>Male</td>
+                <td>BSIT</td>
+                <td>Programming</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Kathryn Bernardo</td>
+                <td>kathb@gmail.com</td>
+                <td>27</td>
+                <td>Feale</td>
+                <td>BSPA</td>
+                <td>Laws</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Alden Richards</td>
+                <td>alden@gmail.com</td>
+                <td>30</td>
+                <td>Male</td>
+                <td>BSSW</td>
+                <td>Social Sciences</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Elias Avery</td>
+                <td>ely@gmail.com</td>
+                <td>20</td>
+                <td>Male</td>
+                <td>BSIT</td>
+                <td>Programming</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
